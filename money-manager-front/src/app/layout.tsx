@@ -1,25 +1,27 @@
-import type { Metadata } from "next";
-import {Inter}  from 'next/font/google'
+import './globals.css'
+import type { Metadata } from 'next'
+import { Poppins } from 'next/font/google'
+import { cn } from '@/lib/utils'
+// import { AuthContextProvider } from '@/context/auth-context'
 
-const inter = Inter({subsets: ['latin']})
+const poppins = Poppins({ weight: '300', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Money Manager",
-  description: "Seu gerenciador financeiro!",
-};
+  title: 'Money Manager :: Seu gerenciador financeiro!',
+  description: 'Gerenciador financeiro',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
+
   return (
-    <html lang="pt-BR">
-      <body
-        className={inter.className}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    // <AuthContextProvider>
+      <html lang="pt-BR">
+        <body className={cn(poppins.className, "bg-gray-100")}>{children}</body>
+      </html>
+    // {/* </AuthContextProvider> */}
+  )
 }
