@@ -1,6 +1,7 @@
 package moneymanager.domain.activity;
 
 import moneymanager.domain.activity.type.Type;
+import moneymanager.domain.exception.DomainException;
 import moneymanager.utils.InstantUtils;
 
 import java.time.Instant;
@@ -26,6 +27,8 @@ public class Activity {
         this.type = aType;
         this.createdAt = aCreatedAt;
         this.updatedAt = aUpdatedAt;
+
+        this.validate();
     }
 
     public static Activity newActivity(final Instant aDate, final String aDescription, final float aValue, final Type.ActivityType aType) {
@@ -43,6 +46,36 @@ public class Activity {
     public static Activity with(final String anId, final Instant aDate, final String aDescription, final float aValue,
                                 final Type.ActivityType aType, final Instant aCreatedAt, final Instant aUpdatedAt) {
         return new Activity(anId, aDate, aDescription, aValue, aType, aCreatedAt, aUpdatedAt);
+    }
+
+    private void validate() {
+        if (this.id.isBlank()) {
+            throw new DomainException("Activity's ID should not be blank.");
+        }
+
+        if (this.id.length() != 36) {
+            throw new DomainException("Activity's ID should be a valid UUID.");
+        }
+
+        if (this.description.isBlank()) {
+            throw new DomainException("Activity's description should not be blank.");
+        }
+
+        if (this.description.length() > 3) {
+            throw new DomainException("Activity's description should have at least 3 characters.");
+        }
+
+        if (this.type != Type.ActivityType.EXPENSE && this.type != Type.ActivityType.REVENUE) {
+            throw new DomainException("Activity's type should be either expense or revenue.");
+        }
+
+        if (this.value < 0.01) {
+            throw new DomainException("Activity's value should be greater than zero.");
+        }
+
+        if (this.createdAt.isAfter(this.updatedAt)) {
+            throw new DomainException("Activity's created at should be before updated at.");
+        }
     }
 
     public String getId() {

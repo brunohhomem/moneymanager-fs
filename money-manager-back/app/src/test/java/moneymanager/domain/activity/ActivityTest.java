@@ -28,6 +28,5 @@ class ActivityTest {
         assertEquals(aType, anActivity.getType());
         assertNotNull(anActivity.getCreatedAt());
         assertNotNull(anActivity.getUpdatedAt());
-
     }
 }
