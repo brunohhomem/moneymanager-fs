@@ -1,4 +1,4 @@
-package moneymanager.domain.acitivity.type;
+package moneymanager.domain.activity.type;
 
 public class Type {
 
