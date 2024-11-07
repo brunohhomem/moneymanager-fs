@@ -10,6 +10,6 @@ public interface ActivityGateway {
 
     public void delete(final String anId);
 
-    public List<Activity> findAll(final Activity anActivity);
+    public List<Activity> findAll();
 
 }
