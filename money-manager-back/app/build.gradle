@@ -41,7 +41,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'moneymanager'
+    mainClass = 'moneymanager.App'
 }
 
 tasks.named('test') {
