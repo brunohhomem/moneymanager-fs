@@ -1,4 +1,4 @@
-package moneymanager.domain.service.dto;
+package moneymanager.service.dto;
 
 import java.time.Instant;
 

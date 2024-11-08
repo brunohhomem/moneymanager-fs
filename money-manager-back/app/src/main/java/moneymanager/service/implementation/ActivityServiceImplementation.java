@@ -1,14 +1,14 @@
-package moneymanager.domain.service.implementation;
+package moneymanager.service.implementation;
 
 import moneymanager.domain.activity.type.Type;
 import moneymanager.domain.gateway.ActivityGateway;
-import moneymanager.domain.service.ActivityService;
-import moneymanager.domain.service.dto.InsertActivityInputDTO;
-import moneymanager.domain.service.dto.InsertActivityOutputDTO;
-import moneymanager.domain.service.dto.ListActivitiesOutputDTO;
-import moneymanager.domain.service.dto.mapper.ActivityToInsertActivityOutputMapper;
-import moneymanager.domain.service.dto.mapper.ActivityToListActivitiesOutputMapper;
-import moneymanager.domain.service.dto.mapper.InsertActivityInputToActivityMapper;
+import moneymanager.service.ActivityService;
+import moneymanager.service.dto.InsertActivityInputDTO;
+import moneymanager.service.dto.InsertActivityOutputDTO;
+import moneymanager.service.dto.ListActivitiesOutputDTO;
+import moneymanager.service.dto.mapper.ActivityToInsertActivityOutputMapper;
+import moneymanager.service.dto.mapper.ActivityToListActivitiesOutputMapper;
+import moneymanager.service.dto.mapper.InsertActivityInputToActivityMapper;
 
 import java.util.List;
 import java.util.stream.Collectors;

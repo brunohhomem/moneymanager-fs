@@ -1,7 +1,7 @@
-package moneymanager.domain.service.dto.mapper;
+package moneymanager.service.dto.mapper;
 
 import moneymanager.domain.activity.Activity;
-import moneymanager.domain.service.dto.ListActivitiesOutputDTO;
+import moneymanager.service.dto.ListActivitiesOutputDTO;
 
 import java.util.function.Function;
 

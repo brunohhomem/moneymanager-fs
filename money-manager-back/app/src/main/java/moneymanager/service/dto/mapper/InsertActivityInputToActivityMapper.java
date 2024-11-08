@@ -1,9 +1,9 @@
-package moneymanager.domain.service.dto.mapper;
+package moneymanager.service.dto.mapper;
 
 import moneymanager.domain.activity.Activity;
 import moneymanager.domain.activity.type.Type;
-import moneymanager.domain.service.dto.InsertActivityInputDTO;
-import moneymanager.domain.service.exception.ServiceException;
+import moneymanager.service.dto.InsertActivityInputDTO;
+import moneymanager.service.exception.ServiceException;
 
 import java.util.function.Function;
 
