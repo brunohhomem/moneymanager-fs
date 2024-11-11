@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-   db:
+  db:
     image: mysql:8.0-debian
     container_name: mysql_db
     tty: true
@@ -10,3 +10,5 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     ports:
       - 3063:3063
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/1.sql
