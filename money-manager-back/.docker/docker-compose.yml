@@ -9,6 +9,6 @@ services:
       - MYSQL_DATABASE=moneymanager
       - MYSQL_ROOT_PASSWORD=root
     ports:
-      - 3063:3063
+      - 5000:3306
     volumes:
       - ./db/schema.sql:/docker-entrypoint-initdb.d/1.sql
